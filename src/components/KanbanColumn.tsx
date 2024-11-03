@@ -22,11 +22,11 @@ const KanbanColumn = ({
 }: KanbanColumnProps) => {
   return (
     <div
-      className="w-full md:w-[300px] bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20 transform hover:translate-y-[-4px] transition-all duration-300"
+      className="w-full md:w-[300px] bg-white/80 backdrop-blur-sm rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20 transform hover:translate-y-[-4px] transition-all duration-300"
       onDragOver={onDragOver}
       onDrop={(e) => onDrop(e, column.id)}
     >
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-4 p-4 bg-white/90 rounded-t-2xl border-b border-white/20">
         <h2 className="text-lg font-semibold bg-gradient-to-r from-[#13A3B5] to-[#1739eb] text-transparent bg-clip-text">{column.title}</h2>
         {column.id === 'done' && onClearDone && (
           <button
@@ -38,7 +38,7 @@ const KanbanColumn = ({
           </button>
         )}
       </div>
-      <div className="space-y-3">
+      <div className="space-y-3 p-4">
         {tasks.map((task) => (
           <div
             key={task.id}
