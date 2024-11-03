@@ -22,19 +22,19 @@ const KanbanColumn = ({
 }: KanbanColumnProps) => {
   return (
     <div
-      className="flex-1 min-w-[300px] bg-gray-50 rounded-lg p-4"
+      className="flex-1 min-w-[300px] bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform hover:translate-y-[-4px] transition-all duration-300"
       onDragOver={onDragOver}
       onDrop={(e) => onDrop(e, column.id)}
     >
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold text-gray-700">{column.title}</h2>
+        <h2 className="text-lg font-semibold text-gray-800">{column.title}</h2>
         {column.id === 'done' && onClearDone && (
           <button
             onClick={onClearDone}
-            className="p-2 hover:bg-gray-200 rounded-full transition-colors"
+            className="p-2 hover:bg-red-50 rounded-full transition-colors"
             aria-label="Clear done tasks"
           >
-            <Trash2 className="w-5 h-5 text-gray-600" />
+            <Trash2 className="w-5 h-5 text-red-500" />
           </button>
         )}
       </div>
