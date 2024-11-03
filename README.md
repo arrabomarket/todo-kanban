@@ -1,71 +1,93 @@
-# Welcome to your GPT Engineer project
+# Do It Yourself - Kanban Board
 
-## Project info
+A simple and elegant Kanban board application built with modern web technologies.
 
-**URL**: https://run.gptengineer.app/projects/ff5e887e-bcd2-419c-8324-a78fc56e97df/improve
+## Deployment Guide
 
-## How can I edit this code?
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn package manager
+- Git (optional)
 
-There are several ways of editing your application.
+### Option 1: Deploy to Your Own Server
 
-**Use GPT Engineer**
+1. **Clone or download the repository**
+   ```bash
+   git clone <repository-url>
+   # or download and extract the ZIP file
+   ```
 
-Simply visit the GPT Engineer project at [GPT Engineer](https://gptengineer.app/projects/ff5e887e-bcd2-419c-8324-a78fc56e97df/improve) and start prompting.
+2. **Install dependencies**
+   ```bash
+   cd kanban-board
+   npm install
+   # or
+   yarn install
+   ```
 
-Changes made via gptengineer.app will be committed automatically to this repo.
+3. **Build the application**
+   ```bash
+   npm run build
+   # or
+   yarn build
+   ```
 
-**Use your preferred IDE**
+4. **Deploy the built files**
+   - The built files will be in the `dist` directory
+   - Upload the contents of the `dist` directory to your web server
+   - Configure your web server to serve the application:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in the GPT Engineer UI.
+   Example Nginx configuration:
+   ```nginx
+   server {
+       listen 80;
+       server_name your-domain.com;
+       root /path/to/dist;
+       
+       location / {
+           try_files $uri $uri/ /index.html;
+       }
+   }
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Option 2: Deploy to Netlify
 
-Follow these steps:
+1. Fork or clone this repository to your GitHub account
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. Sign up for a Netlify account at https://www.netlify.com
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. In Netlify:
+   - Click "New site from Git"
+   - Choose your repository
+   - Build command: `npm run build` or `yarn build`
+   - Publish directory: `dist`
+   - Click "Deploy site"
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Option 3: Deploy to Vercel
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+1. Fork or clone this repository to your GitHub account
 
-**Edit a file directly in GitHub**
+2. Sign up for a Vercel account at https://vercel.com
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. In Vercel:
+   - Click "Import Project"
+   - Choose your repository
+   - The build settings will be automatically detected
+   - Click "Deploy"
 
-**Use GitHub Codespaces**
+## Environment Variables
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This application doesn't require any environment variables for basic functionality.
 
-## What technologies are used for this project?
+## Troubleshooting
 
-This project is built with .
+- If you encounter a blank page, ensure your server is configured to redirect all routes to index.html
+- For 404 errors, check if your server's root directory is set correctly
+- For build errors, make sure you're using a compatible Node.js version
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Support
 
-## How can I deploy this project?
-
-All GPT Engineer projects can be deployed directly via the GPT Engineer app.
-
-Simply visit your project at [GPT Engineer](https://gptengineer.app/projects/ff5e887e-bcd2-419c-8324-a78fc56e97df/improve) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.gptengineer.app/tips-tricks/custom-domain/)
+If you encounter any issues during deployment, please:
+1. Check the console for error messages
+2. Verify all prerequisites are met
+3. Ensure all build steps were completed successfully
