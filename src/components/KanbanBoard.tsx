@@ -72,21 +72,23 @@ const KanbanBoard = () => {
 
   return (
     <div className="space-y-6">
-      <form onSubmit={handleAddTask} className="flex gap-4 p-4 bg-white rounded-xl shadow-lg transform hover:scale-[1.02] transition-all duration-300">
-        <Input
-          type="text"
-          value={newTaskTitle}
-          onChange={(e) => setNewTaskTitle(e.target.value)}
-          placeholder="Új feladat hozzáadása..."
-          className="flex-1"
-        />
-        <button
-          type="submit"
-          className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-lg flex items-center gap-2 hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(59,130,246,0.3)]"
-        >
-          <Plus className="w-5 h-5" />
-          Hozzáadás
-        </button>
+      <form onSubmit={handleAddTask} className="max-w-2xl mx-auto">
+        <div className="flex gap-4 p-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20 transform hover:scale-[1.02] transition-all duration-300">
+          <Input
+            type="text"
+            value={newTaskTitle}
+            onChange={(e) => setNewTaskTitle(e.target.value)}
+            placeholder="Új feladat hozzáadása..."
+            className="flex-1 bg-white/50 border-white/30 focus:border-blue-400 placeholder:text-gray-500"
+          />
+          <button
+            type="submit"
+            className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white px-6 py-2 rounded-xl flex items-center gap-2 hover:shadow-[0_8px_30px_rgba(139,92,246,0.3)] transition-all duration-300 font-medium"
+          >
+            <Plus className="w-5 h-5" />
+            Hozzáadás
+          </button>
+        </div>
       </form>
 
       <div className="flex gap-6 p-6 overflow-x-auto min-h-[calc(100vh-12rem)]">
