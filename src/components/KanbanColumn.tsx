@@ -27,7 +27,7 @@ const KanbanColumn = ({
       onDrop={(e) => onDrop(e, column.id)}
     >
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">{column.title}</h2>
+        <h2 className="text-lg font-semibold bg-gradient-to-r from-[#13A3B5] to-[#1739eb] text-transparent bg-clip-text">{column.title}</h2>
         {column.id === 'done' && onClearDone && (
           <button
             onClick={onClearDone}
