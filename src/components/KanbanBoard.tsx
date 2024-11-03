@@ -91,7 +91,7 @@ const KanbanBoard = () => {
         </div>
       </form>
 
-      <div className="flex flex-col md:flex-row gap-6 p-6 overflow-x-auto min-h-[calc(100vh-12rem)]">
+      <div className="flex flex-col md:flex-row gap-6 p-6 overflow-x-auto min-h-[calc(100vh-12rem)] justify-center items-start">
         {columns.map(column => (
           <KanbanColumn
             key={column.id}
