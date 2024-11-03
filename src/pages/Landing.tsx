@@ -22,6 +22,9 @@ const Landing = () => {
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </div>
+      <footer className="mt-8 text-center text-gray-500">
+        Developed by: FarkasAtis - ArraboMarket
+      </footer>
     </div>
   );
 };
