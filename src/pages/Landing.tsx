@@ -8,6 +8,11 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex flex-col items-center justify-center p-6">
       <div className="max-w-3xl text-center space-y-8">
+        <img 
+          src="https://i.ibb.co/VxKL8Zb/clipboard-logo.png" 
+          alt="Do It Yourself Logo" 
+          className="w-24 h-24 mx-auto mb-6"
+        />
         <h1 className="text-5xl font-bold bg-gradient-to-r from-[#13A3B5] to-[#1739eb] inline-block text-transparent bg-clip-text">
           Do It Yourself
         </h1>
