@@ -22,7 +22,7 @@ const KanbanColumn = ({
 }: KanbanColumnProps) => {
   return (
     <div
-      className="flex-1 min-w-[300px] bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20 transform hover:translate-y-[-4px] transition-all duration-300"
+      className="w-full md:w-[300px] bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20 transform hover:translate-y-[-4px] transition-all duration-300"
       onDragOver={onDragOver}
       onDrop={(e) => onDrop(e, column.id)}
     >
